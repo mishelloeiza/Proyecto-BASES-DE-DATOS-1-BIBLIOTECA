@@ -15,6 +15,10 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
 import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import vista.bancos.MantenimientoDevolucion;
@@ -27,6 +31,9 @@ import vista.seguridad.MantenimientoAplicacion;
 import vista.seguridad.MantenimientoBitacora;
 import vista.seguridad.AplicacionaUsuariosDEF;
 import vista.seguridad.MantenimientoRelPerfUsu;
+import javax.swing.JTable;
+import javax.swing.JScrollPane;
+import javax.swing.table.DefaultTableModel;
 
 
 /**
@@ -88,7 +95,6 @@ private permisos permisosUsuarioActual;
         jLabel8 = new javax.swing.JLabel();
         jButton9 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -186,18 +192,10 @@ private permisos permisosUsuarioActual;
         });
 
         jButton11.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton11.setText("USUARIOS-PERSONAL DE LA EMPRESA");
+        jButton11.setText("CONSULTA DE ID -USARIO - PERFIL");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton11ActionPerformed(evt);
-            }
-        });
-
-        jButton12.setFont(new java.awt.Font("Sitka Text", 1, 12)); // NOI18N
-        jButton12.setText("PUESTOS-PERFILES");
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
             }
         });
 
@@ -219,9 +217,7 @@ private permisos permisosUsuarioActual;
                 .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton11)
-                .addGap(18, 18, 18)
-                .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(592, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -240,8 +236,7 @@ private permisos permisosUsuarioActual;
                             .addComponent(jButton10)
                             .addComponent(jLabel8)
                             .addComponent(jButton9)
-                            .addComponent(jButton11)
-                            .addComponent(jButton12))
+                            .addComponent(jButton11))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -426,7 +421,7 @@ private permisos permisosUsuarioActual;
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(LOGOINICIAL, javax.swing.GroupLayout.PREFERRED_SIZE, 704, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 785, Short.MAX_VALUE))
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -449,7 +444,7 @@ private permisos permisosUsuarioActual;
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 23, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -493,43 +488,54 @@ private permisos permisosUsuarioActual;
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-      // TODO add your handling code here:
+                                         
+    String url = "jdbc:oracle:thin:@localhost:1521/XEPDB1"; // ✅ usa SERVICE_NAME correctamente
+    String usuario = "biblioteca";
+    String clave = "biblioteca123";
 
-        for (javax.swing.JInternalFrame frame : jDesktopPane1.getAllFrames()) {
-            frame.dispose();
+    String sql = """
+        SELECT u.id_usuario, u.username, p.nombre_perfil
+        FROM usuario u
+        JOIN relperfusu r ON u.id_usuario = r.id_usuario
+        JOIN perfiles p ON r.id_perfil = p.id_perfil
+        ORDER BY u.id_usuario
+        """;
+
+    try (Connection conn = DriverManager.getConnection(url, usuario, clave);
+         PreparedStatement ps = conn.prepareStatement(sql);
+         ResultSet rs = ps.executeQuery()) {
+
+        // Crear modelo de tabla
+        DefaultTableModel modelo = new DefaultTableModel();
+        modelo.addColumn("ID Usuario");
+        modelo.addColumn("Nombre Usuario");
+        modelo.addColumn("Perfil");
+
+        while (rs.next()) {
+            Object[] fila = {
+                rs.getInt("id_usuario"),
+                rs.getString("username"),
+                rs.getString("nombre_perfil")
+            };
+            modelo.addRow(fila);
         }
 
-        // Crea y muestra la nueva ventana
-        MantenimientoUsuario ventana = new MantenimientoUsuario();
-        jDesktopPane1.add(ventana);
+        // Crear tabla y ventana
+        JTable tabla = new JTable(modelo);
+        JScrollPane scroll = new JScrollPane(tabla);
 
-        // Centra la ventana dentro del JDesktopPane
-        Dimension desktopSize = jDesktopPane1.getSize();
-        Dimension FrameSize = ventana.getSize();
-        ventana.setLocation(
-            (desktopSize.width - FrameSize.width) / 2,
-            (desktopSize.height - FrameSize.height) / 2
-        );
+        JFrame ventana = new JFrame("Consulta de Usuarios con Perfil");
+        ventana.setSize(600, 400);
+        ventana.setLocationRelativeTo(null);
+        ventana.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        ventana.add(scroll);
+        ventana.setVisible(true);
+
+    } catch (SQLException ex) {
+        JOptionPane.showMessageDialog(null, "Error al consultar: " + ex.getMessage());
+    }
+
     }//GEN-LAST:event_jButton11ActionPerformed
-
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        // TODO add your handling code here:
-        for (javax.swing.JInternalFrame frame : jDesktopPane1.getAllFrames()) {
-            frame.dispose();
-        }
-
-        // Crea y muestra la nueva ventana
-       // MantenimientoPerfiles ventana = new MantenimientoPerfiles();
-        //jDesktopPane1.add(ventana);
-
-        // Centra la ventana dentro del JDesktopPane
-       // Dimension desktopSize = jDesktopPane1.getSize();
-       // Dimension FrameSize = ventana.getSize();
-       // ventana.setLocation(
-           // (desktopSize.width - FrameSize.width) / 2,
-            //(desktopSize.height - FrameSize.height) / 2
-       // );
-    }//GEN-LAST:event_jButton12ActionPerformed
 
     private void AP2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AP2ActionPerformed
         // TODO add your handling code here:
@@ -872,7 +878,6 @@ public static void main(String args[]) {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton9;

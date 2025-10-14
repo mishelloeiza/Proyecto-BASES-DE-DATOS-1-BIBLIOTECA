@@ -29,6 +29,7 @@ vista\seguridad\MantenimientoBitacora$1.class
 vista\seguridad\MantenimientoRelPerfUsu$2.class
 vista\MdiBancoMan.class
 vista\bodegas\MantenimientoBodega$7.class
+vista\bancos\MantenimientoLibros$11.class
 vista\MdiGeneral$14.class
 Modelo\seguridad\UsuarioDAO.class
 vista\bodegas\MantenimientoBodega$6.class
@@ -42,6 +43,7 @@ vista\seguridad\MantenimientoRelPerfApl$2.class
 vista\bancos\MantenimientoLibros$6.class
 vista\NewJPanel$5.class
 vista\seguridad\Mantenimiento_Derecho$4.class
+vista\JScrollPane.class
 vista\seguridad\MantenimientoAplicacion.class
 vista\seguridad\AplicacionaUsuariosDEF.class
 vista\bancos\MantenimientoLibros.class
@@ -105,7 +107,6 @@ vista\MdiBancoPro$10.class
 vista\bancos\MantenimientoPrestamo$2.class
 vista\Login$1.class
 Modelo\seguridad\RelPerfUsuDAO.class
-vista\MdiBancoMan$15.class
 vista\MdiBancoMan$3.class
 vista\MdiGenebac$1.class
 vista\seguridad\MantenimientoPerfiles$1.class
@@ -115,6 +116,7 @@ vista\bodegas\MantenimientoBodega$9.class
 vista\MdiBancoPro$11.class
 vista\bancos\MantenimientoLibros$2.class
 vista\seguridad\MantenimientoRelPerfApl$4.class
+vista\JTable.class
 vista\MdiGeneral$3.class
 vista\seguridad\MantenimientoUsuario$1.class
 vista\MdiBancoPro.class
@@ -173,6 +175,7 @@ vista\MdiGeneral$13.class
 Controlador\seguridad\RelPerfUsu.class
 vista\bancos\MantenimientoPrestamo$6.class
 Controlador\bodegas\SesionInactiva$1.class
+vista\bancos\tablaLibros.class
 vista\MdiGeneral$10.class
 vista\ACCESO.class
 vista\bancos\MantenimientoLibros$9.class
