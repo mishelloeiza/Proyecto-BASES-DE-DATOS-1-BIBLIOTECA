@@ -25,7 +25,7 @@ Está diseñado para garantizar trazabilidad, control de acceso, y administraci�
 - Asociación de permisos por módulo: insertar, editar, eliminar, imprimir.
 - Relación con usuarios mediante tabla `relperfusu`.
 
-  #### 👤 Mantenimineto de Permisos
+  #### 👤 Mantenimiento de tabla de  Permisos
   -Se ocupada de dar acceso a los modulos y aplicaciones
   (  operaciones de CRUD eliminar, registar, modificar y buscar)
 
