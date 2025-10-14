@@ -8,7 +8,7 @@ Está diseñado para garantizar trazabilidad, control de acceso, y administraci�
 #### 📖 Gestión de Libros
 - Registro, modificación, consulta y eliminación de libros.
 - Atributos: título, autor, editorial, categoría, stock y estado.
-- 
+ 
 #### 🔄 Préstamo y Devolución
 - Registro de préstamos por usuario, con fecha de entrega y devolución.
 - Validación de disponibilidad de stock.
@@ -25,6 +25,10 @@ Está diseñado para garantizar trazabilidad, control de acceso, y administraci�
 - Asociación de permisos por módulo: insertar, editar, eliminar, imprimir.
 - Relación con usuarios mediante tabla `relperfusu`.
 
+  #### 👤 Mantenimineto de Permisos
+  -Se ocupada de dar acceso a los modulos y aplicaciones
+  (  operaciones de CRUD eliminar, registar, modificar y buscar)
+
 #### 📋 Bitácora de Acciones
 - Registro automático de operaciones realizadas por cada usuario.
 - Campos: fecha, IP, nombre de PC, acción, módulo.
@@ -34,6 +38,7 @@ Está diseñado para garantizar trazabilidad, control de acceso, y administraci�
 
 #### 🗃️ Base de datos Oracle XE 21c
 - Motor relacional con soporte para SQL y PL/SQL.
+  
 - Uso de **tablespace personalizado** para segmentar el proyecto:
 
 CREATE TABLESPACE PROYECTO_BDMISHEL
