@@ -603,7 +603,7 @@ public class MantenimientoPrestamo extends javax.swing.JInternalFrame {
         try {
             connectio = Conexion.getConnection();
             report = JasperCompileManager.compileReport(new File("").getAbsolutePath()
-                    + "/src/main/java/reporte/banco/reporteBanco.jrxml");
+                    + "/src/main/java/reporte/bodegas/ReportePres.jrxml");
 //
             print = JasperFillManager.fillReport(report, p, connectio);
 

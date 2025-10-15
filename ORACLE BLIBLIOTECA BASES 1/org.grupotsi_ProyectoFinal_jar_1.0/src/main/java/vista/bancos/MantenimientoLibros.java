@@ -545,7 +545,7 @@ public class MantenimientoLibros extends javax.swing.JInternalFrame {
         try {
             connectio = Conexion.getConnection();
             report = JasperCompileManager.compileReport(new File("").getAbsolutePath()
-                    + "/src/main/java/reporte/banco/reporteBanco.jrxml");
+                    + "/src/main/java/reporte/bodegas/ReporteLib.jrxml");
 //
             print = JasperFillManager.fillReport(report, p, connectio);
 

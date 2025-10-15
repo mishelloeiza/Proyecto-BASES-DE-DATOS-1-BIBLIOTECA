@@ -624,7 +624,7 @@ public void registrarDevolucion() {
         try {
             connectio = Conexion.getConnection();
             report = JasperCompileManager.compileReport(new File("").getAbsolutePath()
-                    + "/src/main/java/reporte/banco/reporteBanco.jrxml");
+                    + "/src/main/java/reporte/bodegas/ReporteDev.jrxml");
 //
             print = JasperFillManager.fillReport(report, p, connectio);
 

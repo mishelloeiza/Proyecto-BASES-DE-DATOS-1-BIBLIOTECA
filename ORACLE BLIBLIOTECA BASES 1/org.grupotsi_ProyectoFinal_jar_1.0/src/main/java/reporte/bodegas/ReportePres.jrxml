@@ -3,7 +3,7 @@
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports
                                   http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
-              name="ReporteDevoluciones"
+              name="ReportePrestamos"
               language="groovy"
               pageWidth="595"
               pageHeight="842"
@@ -12,30 +12,31 @@
               rightMargin="20"
               topMargin="20"
               bottomMargin="20"
-              uuid="00000000-0000-0000-0000-000000000010">
+              uuid="00000000-0000-0000-0000-000000000020">
 
     <queryString language="SQL">
         <![CDATA[
-            SELECT id_devolucion, id_prestamo, fecha_devolucion, observaciones FROM devolucion
+            SELECT id_prestamo, id_libro, id_usuario, fecha_prestamo, estado FROM prestamo
         ]]>
     </queryString>
 
-    <field name="id_devolucion" class="java.lang.Integer"/>
     <field name="id_prestamo" class="java.lang.Integer"/>
-    <field name="fecha_devolucion" class="java.sql.Timestamp"/>
-    <field name="observaciones" class="java.lang.String"/>
+    <field name="id_libro" class="java.lang.Integer"/>
+    <field name="id_usuario" class="java.lang.Integer"/>
+    <field name="fecha_prestamo" class="java.sql.Timestamp"/>
+    <field name="estado" class="java.lang.String"/>
 
     <title>
         <band height="60">
             <staticText>
-                <reportElement x="0" y="10" width="555" height="30" uuid="00000000-0000-0000-0000-000000000011"/>
+                <reportElement x="0" y="10" width="555" height="30" uuid="00000000-0000-0000-0000-000000000021"/>
                 <textElement textAlignment="Center">
                     <font size="20" isBold="true"/>
                 </textElement>
-                <text><![CDATA[Reporte de Devoluciones]]></text>
+                <text><![CDATA[Reporte de Préstamos]]></text>
             </staticText>
             <staticText>
-                <reportElement x="0" y="40" width="555" height="20" uuid="00000000-0000-0000-0000-000000000012"/>
+                <reportElement x="0" y="40" width="555" height="20" uuid="00000000-0000-0000-0000-000000000022"/>
                 <textElement textAlignment="Center">
                     <font size="12"/>
                 </textElement>
@@ -47,24 +48,29 @@
     <columnHeader>
         <band height="20">
             <staticText>
-                <reportElement x="0" y="0" width="100" height="20"/>
-                <textElement><font isBold="true"/></textElement>
-                <text><![CDATA[ID Devolución]]></text>
-            </staticText>
-            <staticText>
-                <reportElement x="100" y="0" width="100" height="20"/>
+                <reportElement x="0" y="0" width="80" height="20"/>
                 <textElement><font isBold="true"/></textElement>
                 <text><![CDATA[ID Préstamo]]></text>
             </staticText>
             <staticText>
-                <reportElement x="200" y="0" width="150" height="20"/>
+                <reportElement x="80" y="0" width="80" height="20"/>
                 <textElement><font isBold="true"/></textElement>
-                <text><![CDATA[Fecha Devolución]]></text>
+                <text><![CDATA[ID Libro]]></text>
             </staticText>
             <staticText>
-                <reportElement x="350" y="0" width="205" height="20"/>
+                <reportElement x="160" y="0" width="80" height="20"/>
                 <textElement><font isBold="true"/></textElement>
-                <text><![CDATA[Observaciones]]></text>
+                <text><![CDATA[ID Usuario]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="240" y="0" width="150" height="20"/>
+                <textElement><font isBold="true"/></textElement>
+                <text><![CDATA[Fecha Préstamo]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="390" y="0" width="165" height="20"/>
+                <textElement><font isBold="true"/></textElement>
+                <text><![CDATA[Estado]]></text>
             </staticText>
         </band>
     </columnHeader>
@@ -72,20 +78,24 @@
     <detail>
         <band height="20">
             <textField>
-                <reportElement x="0" y="0" width="100" height="20"/>
-                <textFieldExpression><![CDATA[$F{id_devolucion}]]></textFieldExpression>
-            </textField>
-            <textField>
-                <reportElement x="100" y="0" width="100" height="20"/>
+                <reportElement x="0" y="0" width="80" height="20"/>
                 <textFieldExpression><![CDATA[$F{id_prestamo}]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement x="200" y="0" width="150" height="20"/>
-                <textFieldExpression><![CDATA[$F{fecha_devolucion}]]></textFieldExpression>
+                <reportElement x="80" y="0" width="80" height="20"/>
+                <textFieldExpression><![CDATA[$F{id_libro}]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement x="350" y="0" width="205" height="20"/>
-                <textFieldExpression><![CDATA[$F{observaciones}]]></textFieldExpression>
+                <reportElement x="160" y="0" width="80" height="20"/>
+                <textFieldExpression><![CDATA[$F{id_usuario}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="240" y="0" width="150" height="20"/>
+                <textFieldExpression><![CDATA[$F{fecha_prestamo}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="390" y="0" width="165" height="20"/>
+                <textFieldExpression><![CDATA[$F{estado}]]></textFieldExpression>
             </textField>
         </band>
     </detail>
