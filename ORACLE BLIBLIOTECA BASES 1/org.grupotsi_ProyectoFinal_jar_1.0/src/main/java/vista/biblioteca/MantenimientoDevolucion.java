@@ -1,17 +1,17 @@
-package vista.bancos;
+package vista.biblioteca;
 
 // MISHEL LOEIZA 9959-23-3457
 // Mantenimiento para tabla devolucion
-import Controlador.bancos.libro;
-import Controlador.bancos.devolucion;
-import Controlador.bancos.prestamo;
-import Modelo.bancos.DevolucionDAO;
+import Controlador.biblioteca.libro;
+import Controlador.biblioteca.devolucion;
+import Controlador.biblioteca.prestamo;
+import Modelo.biblioteca.DevolucionDAO;
 import Controlador.seguridad.UsuarioConectado;
 import Controlador.seguridad.Bitacora;
 import Controlador.seguridad.permisos;
 import Modelo.Conexion;
-import Modelo.bancos.PrestamoDAO;
-import Modelo.bancos.LibroDAO;
+import Modelo.biblioteca.PrestamoDAO;
+import Modelo.biblioteca.LibroDAO;
 import Modelo.seguridad.UsuarioDAO;
 import java.io.File;
 import java.sql.Connection;
@@ -383,8 +383,6 @@ public void registrarDevolucion() {
                         .addContainerGap(315, Short.MAX_VALUE))))
         );
 
-        getAccessibleContext().setAccessibleName("104");
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 //Boton eliminar
@@ -624,7 +622,7 @@ public void registrarDevolucion() {
         try {
             connectio = Conexion.getConnection();
             report = JasperCompileManager.compileReport(new File("").getAbsolutePath()
-                    + "/src/main/java/reporte/bodegas/ReporteDev.jrxml");
+                    + "/src/main/java/reporte/biblioteca/ReporteDev.jrxml");
 //
             print = JasperFillManager.fillReport(report, p, connectio);
 

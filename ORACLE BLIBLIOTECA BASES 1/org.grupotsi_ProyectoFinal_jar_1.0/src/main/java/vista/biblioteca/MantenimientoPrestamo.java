@@ -1,13 +1,13 @@
-package vista.bancos;
+package vista.biblioteca;
 
 import Controlador.seguridad.UsuarioConectado;
 import Modelo.seguridad.UsuarioDAO;
 import Controlador.seguridad.permisos;
 
-import Modelo.bancos.PrestamoDAO;
-import Modelo.bancos.LibroDAO;
-import Controlador.bancos.prestamo;
-import Controlador.bancos.libro;
+import Modelo.biblioteca.PrestamoDAO;
+import Modelo.biblioteca.LibroDAO;
+import Controlador.biblioteca.prestamo;
+import Controlador.biblioteca.libro;
 import Controlador.seguridad.Bitacora;
 import Modelo.Conexion;
 import java.io.File;
@@ -603,7 +603,7 @@ public class MantenimientoPrestamo extends javax.swing.JInternalFrame {
         try {
             connectio = Conexion.getConnection();
             report = JasperCompileManager.compileReport(new File("").getAbsolutePath()
-                    + "/src/main/java/reporte/bodegas/ReportePres.jrxml");
+                    + "/src/main/java/reporte/biblioteca/ReportePres.jrxml");
 //
             print = JasperFillManager.fillReport(report, p, connectio);
 

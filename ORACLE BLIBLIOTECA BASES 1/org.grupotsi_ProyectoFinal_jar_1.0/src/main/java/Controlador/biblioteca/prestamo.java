@@ -1,17 +1,18 @@
-package Modelo.bancos;
-
+package Controlador.biblioteca;
 
 // MISHEL LOEIZA 9959-23-3457
 // Nombres de los getters, setters y variables igual al nombre en base de datos
 // Nombre del archivo Java igual que la tabla
 // Se usó encapsulate field para get y set
 
+import java.sql.Timestamp;
+
 public class prestamo {
 
     private int id_prestamo;
     private int id_libro;
     private int id_usuario;
-    private String fecha_prestamo;
+    private Timestamp fecha_prestamo; // ✅ ahora es Timestamp
     private String estado;
 
     // Constructor vacío
@@ -19,7 +20,7 @@ public class prestamo {
     }
 
     // Constructor con todos los campos
-    public prestamo(int id_prestamo, int id_libro, int id_usuario, String fecha_prestamo, String estado) {
+    public prestamo(int id_prestamo, int id_libro, int id_usuario, Timestamp fecha_prestamo, String estado) {
         this.id_prestamo = id_prestamo;
         this.id_libro = id_libro;
         this.id_usuario = id_usuario;
@@ -33,7 +34,7 @@ public class prestamo {
                 "id_prestamo=" + id_prestamo +
                 ", id_libro=" + id_libro +
                 ", id_usuario=" + id_usuario +
-                ", fecha_prestamo='" + fecha_prestamo + '\'' +
+                ", fecha_prestamo=" + fecha_prestamo +
                 ", estado='" + estado + '\'' +
                 '}';
     }
@@ -63,11 +64,11 @@ public class prestamo {
         this.id_usuario = id_usuario;
     }
 
-    public String getFecha_prestamo() {
+    public Timestamp getFecha_prestamo() {
         return fecha_prestamo;
     }
 
-    public void setFecha_prestamo(String fecha_prestamo) {
+    public void setFecha_prestamo(Timestamp fecha_prestamo) {
         this.fecha_prestamo = fecha_prestamo;
     }
 

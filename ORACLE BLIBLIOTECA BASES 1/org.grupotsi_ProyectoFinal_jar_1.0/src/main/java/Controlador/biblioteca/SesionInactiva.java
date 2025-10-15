@@ -1,4 +1,4 @@
-package Controlador.bancos;
+package Controlador.biblioteca;
 
 import javax.swing.*;
 import java.awt.*;

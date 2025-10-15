@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package vista;
-//CREADO POR MISHEL LOEIZA
+//CREADO POR MISHEL LOEIZA 99
 import Controlador.seguridad.Bitacora;
 import Controlador.seguridad.UsuarioConectado;
 import Controlador.seguridad.permisos;
@@ -21,9 +21,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import vista.bancos.MantenimientoDevolucion;
-import vista.bancos.MantenimientoLibros;
-import vista.bancos.MantenimientoPrestamo;
+import vista.biblioteca.MantenimientoDevolucion;
+import vista.biblioteca.MantenimientoLibros;
+import vista.biblioteca.MantenimientoPrestamo;
 
 import vista.seguridad.MantenimientoUsuario;
 import vista.seguridad.MantenimientoPerfiles;

@@ -1,11 +1,11 @@
-package vista.bancos;
+package vista.biblioteca;
 
 import Controlador.seguridad.UsuarioConectado;
 import Modelo.seguridad.UsuarioDAO;
 import Controlador.seguridad.permisos;
 
-import Modelo.bancos.LibroDAO;
-import Controlador.bancos.libro;
+import Modelo.biblioteca.LibroDAO;
+import Controlador.biblioteca.libro;
 import Controlador.seguridad.Bitacora;
 import Modelo.Conexion;
 import java.io.File;
@@ -545,7 +545,7 @@ public class MantenimientoLibros extends javax.swing.JInternalFrame {
         try {
             connectio = Conexion.getConnection();
             report = JasperCompileManager.compileReport(new File("").getAbsolutePath()
-                    + "/src/main/java/reporte/bodegas/ReporteLib.jrxml");
+                    + "/src/main/java/reporte/biblioteca/ReporteLib.jrxml");
 //
             print = JasperFillManager.fillReport(report, p, connectio);
 

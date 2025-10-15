@@ -1,7 +1,7 @@
-package Modelo.bancos;
+package Modelo.biblioteca;
 // MISHEL LOEIZA 9959-23-3457
 
-import Controlador.bancos.devolucion;
+import Controlador.biblioteca.devolucion;
 import Modelo.Conexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

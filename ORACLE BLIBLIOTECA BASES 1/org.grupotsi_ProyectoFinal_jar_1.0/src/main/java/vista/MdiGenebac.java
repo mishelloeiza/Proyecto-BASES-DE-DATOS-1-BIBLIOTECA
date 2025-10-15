@@ -1,5 +1,5 @@
 package vista;
-import Controlador.bodegas.SesionInactiva;
+import Controlador.sesioninactiva.SesionInactiva;
 import Controlador.seguridad.permisos;
 
 import Controlador.seguridad.Bitacora;
@@ -21,9 +21,9 @@ import vista.seguridad.MantenimientoBitacora;
 import Controlador.seguridad.permisos;
 import Modelo.seguridad.UsuarioDAO;
 import Controlador.seguridad.UsuarioConectado;
-import vista.bancos.MantenimientoDevolucion;
-import vista.bancos.MantenimientoLibros;
-import vista.bancos.MantenimientoPrestamo;
+import vista.biblioteca.MantenimientoDevolucion;
+import vista.biblioteca.MantenimientoLibros;
+import vista.biblioteca.MantenimientoPrestamo;
 import vista.seguridad.MantenimientoUsuario;
 
 public class MdiGenebac extends javax.swing.JFrame {

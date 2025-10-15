@@ -1,4 +1,4 @@
-package Controlador.bodegas;
+package Controlador.sesioninactiva;
 
 import javax.swing.*;
 import java.awt.*;
