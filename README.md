@@ -1,4 +1,4 @@
-
+##REQUERIMIENTOS: Oracle Database XE 21c , SQL*Plus, ORACLE SQL DEVELOPER,  ORACLE SQL DEVELOPER DATA MODELER, APACHE NetBeans IDE 22 Y JDK 22.
 ## 📚 Proyecto: Sistema de Biblioteca con Oracle XE 21c BASES DE DATOS 1 - ALUMNA: MISHEL LOEIZA
 Este sistema individual implementa una solución integral para la gestión de una biblioteca académica, 
 utilizando **Oracle Database XE 21c** como motor principal y **Java Swing** como interfaz gráfica. 
