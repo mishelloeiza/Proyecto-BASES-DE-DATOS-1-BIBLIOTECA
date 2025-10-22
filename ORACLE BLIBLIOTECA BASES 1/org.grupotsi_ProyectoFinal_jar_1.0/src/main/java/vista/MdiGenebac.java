@@ -378,26 +378,11 @@ new SesionInactiva(this, labelContador);
     }//GEN-LAST:event_jDesktopPane1AncestorAdded
 
     private void jLabel1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jLabel1AncestorAdded
-        //METODO DE IMAGEN GLOBAL
-        try {
-            File archivoImagen = new File("src\\main\\java\\vista\\B2.jpeg");
+URL ruta = getClass().getResource("/vista/B2.jpeg");
+ImageIcon icono = new ImageIcon(ruta);
+Image imagen = icono.getImage().getScaledInstance(1350, 1099, Image.SCALE_SMOOTH);
+jLabel1.setIcon(new ImageIcon(imagen));
 
-            if (archivoImagen.exists()) {
-                ImageIcon icono = new ImageIcon(archivoImagen.getAbsolutePath());
-                Image imagen = icono.getImage().getScaledInstance(1350, 1099, Image.SCALE_SMOOTH);
-                jLabel1.setIcon(new ImageIcon(imagen));
-
-                // Fuerza el refresco inmediato de la interfaz
-                jLabel1.revalidate();
-                jLabel1.repaint();
-
-                System.out.println("Imagen cargada correctamente");
-            } else {
-                System.out.println("La imagen no fue encontrada");
-            }
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
     }//GEN-LAST:event_jLabel1AncestorAdded
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

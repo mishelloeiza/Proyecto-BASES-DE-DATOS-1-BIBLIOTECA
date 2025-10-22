@@ -10,10 +10,13 @@
     <version>1.0</version>
     <packaging>jar</packaging>
 
+    <name>PROTOTIPOEXAMEN FINAL</name>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>22</maven.compiler.source>
         <maven.compiler.target>22</maven.compiler.target>
+        <exec.mainClass>vista.Login</exec.mainClass>
     </properties>
 
     <dependencies>
@@ -24,7 +27,7 @@
             <version>21.9.0.0</version>
         </dependency>
 
-        <!-- ✅ Driver JDBC para MySQL (si lo usas en paralelo) -->
+        <!-- ✅ Driver JDBC para MySQL -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -38,7 +41,7 @@
             <version>6.20.4</version>
         </dependency>
 
-        <!-- ✅ Groovy (si lo usas en reportes o scripts) -->
+        <!-- ✅ Groovy -->
         <dependency>
             <groupId>org.apache.groovy</groupId>
             <artifactId>groovy</artifactId>
@@ -68,8 +71,22 @@
 
     <build>
         <finalName>capas</finalName>
+
+        <!-- ✅ Incluir imágenes y recursos en el JAR -->
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.jpeg</include>
+                    <include>**/*.jpg</include>
+                    <include>**/*.png</include>
+                    <include>**/*.gif</include>
+                </includes>
+            </resource>
+        </resources>
+
         <plugins>
-            <!-- ✅ Ensamblado del JAR ejecutable -->
+            <!-- ✅ Ensamblado del JAR ejecutable con dependencias -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
@@ -107,5 +124,4 @@
         </plugins>
     </build>
 
-    <name>PROTOTIPOEXAMEN FINAL</name>
 </project>

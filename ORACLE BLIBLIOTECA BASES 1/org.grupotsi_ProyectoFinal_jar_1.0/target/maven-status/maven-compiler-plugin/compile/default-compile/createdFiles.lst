@@ -7,10 +7,8 @@ vista\MdiBancoMan$12.class
 vista\seguridad\MantenimientoRelPerfUsu.class
 vista\MdiBancoMan$7.class
 vista\seguridad\AplicacionaUsuariosDEF$12.class
-vista\seguridad\MantenimientoPerfiles.class
 vista\MdiGenebac.class
 vista\seguridad\MantenimientoRelPerfApl$8.class
-vista\seguridad\MantenimientoPerfiles$6.class
 vista\seguridad\MantenimientoUsuario$2.class
 vista\MantenimientoRelperfUsu.class
 vista\seguridad\AplicacionaUsuariosDEF$5.class
@@ -56,7 +54,6 @@ vista\Login$4.class
 Modelo\seguridad\BitacoraDAO.class
 vista\seguridad\AplicacionaUsuariosDEF$1.class
 vista\biblioteca\MantenimientoPrestamo$3.class
-vista\seguridad\MantenimientoPerfiles$2.class
 vista\Login$2.class
 vista\MdiBancoPro$12.class
 Modelo\seguridad\AsingnacionPerfilDAO.class
@@ -97,7 +94,6 @@ vista\Login$1.class
 Modelo\seguridad\RelPerfUsuDAO.class
 vista\MdiBancoMan$3.class
 vista\MdiGenebac$1.class
-vista\seguridad\MantenimientoPerfiles$1.class
 vista\seguridad\MantenimientoAplicacion$5.class
 vista\MdiBancoPro$1.class
 vista\MdiBancoPro$11.class
@@ -131,7 +127,6 @@ Controlador\seguridad\UsuarioConectado.class
 vista\biblioteca\MantenimientoPrestamo$2.class
 vista\MdiBancoMan$4.class
 vista\seguridad\MantenimientoRelPerfApl.class
-Controlador\sesioninactiva\SesionInactiva$1.class
 vista\seguridad\MantenimientoAplicacion$9.class
 vista\seguridad\MantenimientoBitacora$4.class
 vista\seguridad\MantenimientoDerecho.class
@@ -150,7 +145,6 @@ vista\seguridad\MantenimientoPerfiles$3.class
 vista\biblioteca\MantenimientoLibros$9.class
 vista\seguridad\MantenimientoAplicacion$2.class
 vista\seguridad\MantenimientoRelPerfUsu$4.class
-Controlador\sesioninactiva\SesionInactiva.class
 vista\seguridad\MantenimientoBitacora$3.class
 vista\biblioteca\MantenimientoLibros$8.class
 vista\seguridad\MantenimientoAplicacion$8.class

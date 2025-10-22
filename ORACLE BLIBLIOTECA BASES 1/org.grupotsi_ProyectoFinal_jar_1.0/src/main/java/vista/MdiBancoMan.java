@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package vista;
-//CREADO POR MISHEL LOEIZA 99
+//CREADO POR MISHEL LOEIZA 9959
 import Controlador.seguridad.Bitacora;
 import Controlador.seguridad.UsuarioConectado;
 import Controlador.seguridad.permisos;
